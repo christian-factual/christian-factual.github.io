@@ -217,6 +217,7 @@ function doLayoutMike(root, parent) {
 function update(source, root, tree, svg, diagonal) {
   var duration = 500;
   var fastDuration = 100;
+  var circleRadius = 4.5;
   var nodes = tree.nodes(root);//here
   var links = tree.links(nodes);
   var node = svg.selectAll(".node")
