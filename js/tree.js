@@ -51,8 +51,8 @@ function updateLayout(source, root, svg, group, diagonal) {
   nodeEnter.append("circle")
       .attr("r", function(d){
         console.log(d);
-        return calculateRadius(d, "US");
-        // return 4.5;
+        // return calculateRadius(d, "US");
+        return 4.5;
       }) //making change for animation was 4.5
       .style("fill", function(d) {
         return d.children_saved ? getLinearColor(d) : "#fff";
@@ -90,7 +90,8 @@ function updateLayout(source, root, svg, group, diagonal) {
 
   nodeUpdate.select("circle")
             .attr("r", function(d){
-              return calculateRadius(d, "US");
+              return circleRadius;
+              // return calculateRadius(d, "US");
             })
             .style("fill", function(d){return d.children_saved ? getLinearColor(d) : "#fff"; })
             .style("stroke", function(d){
@@ -275,7 +276,8 @@ function update(source, root, tree, svg, diagonal) {
 
   nodeUpdate.select("circle")
             .attr("r", function(d){
-              return calculateRadius(d, "US");
+              return circleRadius;
+              // return calculateRadius(d, "US");
             })
             .style("fill", function(d){
               return d.children_saved ? getRadialColor(d) : "#fff";
@@ -439,7 +441,8 @@ function removeActiveCategory(categoryID) {
   var mainNode = d3.select('.node[data-category-id="' + categoryID + '"]');
   mainNode.classed('active', false);
   mainNode.select('circle').attr('r', function(d){
-    return calculateRadius(d, "US");
+    return circleRadius;
+    // return calculateRadius(d, "US");
   });
 }
 
